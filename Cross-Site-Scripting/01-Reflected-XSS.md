@@ -20,7 +20,8 @@
 
 Exploitation was achieved by injecting a malicious XSS payload into the search functionality, which failed to sanitize user input, allowing arbitrary script execution in the browser.
   
-  Fig 1. <img width="1090" height="610" alt="image" src="https://github.com/user-attachments/assets/9f5c0188-0772-4f94-8eec-327540892a85" />
+  Fig 1. Injecting JavaScript Payload (`<script>alert(1)</script>`) for Reflected XSS Vulnerability Verification
+  <img width="1090" height="610" alt="image" src="https://github.com/user-attachments/assets/9f5c0188-0772-4f94-8eec-327540892a85" />
 
 ### Payload
 `<script>alert(1)</script>`
@@ -30,9 +31,11 @@ Exploitation was achieved by injecting a malicious XSS payload into the search f
   - Submitted the request via the search function
   - Result: The application executed unsanitized user input in the HTML context, confirming the presence of a reflected Cross-Site Scripting (XSS) vulnerability.
     
-Fig 2. <img width="658" height="372" alt="WhatsApp Image 2026-05-07 at 11 28 07" src="https://github.com/user-attachments/assets/28c5dafa-bd0a-4205-ae4e-38b535eb7622" />
+Fig 2. JavaScript Pop-up Box (`alert(1)`) Confirming XSS Vulnerability Exploitation
+<img width="658" height="372" alt="WhatsApp Image 2026-05-07 at 11 28 07" src="https://github.com/user-attachments/assets/28c5dafa-bd0a-4205-ae4e-38b535eb7622" />
 
-Fig 3. <img width="941" height="393" alt="image" src="https://github.com/user-attachments/assets/95db3796-f199-402f-910f-988fe0e5b7da" />
+Fig 3. Solved State Notification for "Reflected XSS into HTML context with nothing encoded" Lab 
+<img width="941" height="393" alt="image" src="https://github.com/user-attachments/assets/95db3796-f199-402f-910f-988fe0e5b7da" />
 
 
    ## Business Impact
