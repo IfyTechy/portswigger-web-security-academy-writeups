@@ -8,37 +8,42 @@
 - **Platform:** PortSwigger Web Security Academy
   
 
-  ## Objective
+## Objective
 
-  The goal was to exploit a cross-site scripting vulnerability in the search functionality. 
+The goal was to exploit a cross-site scripting vulnerability in the search functionality. 
 
-  ## Discovery & Analysis
+## Discovery & Analysis
 - **Vulnerable Parameter:** The functional search bar
 - **The Problem:** The application does not sanitizee the user input allowing the injected payload to execute
 
-  ## Exploitation 
+## Exploitation 
 
 Exploitation was achieved by injecting a malicious XSS payload into the search functionality, which failed to sanitize user input, allowing arbitrary script execution in the browser.
   
-  Fig 1. Injecting JavaScript Payload (`<script>alert(1)</script>`) for Reflected XSS Vulnerability Verification
-  <img width="1090" height="610" alt="image" src="https://github.com/user-attachments/assets/9f5c0188-0772-4f94-8eec-327540892a85" />
+**Fig 1:** Injecting JavaScript Payload (`<script>alert(1)</script>`) for Reflected XSS Vulnerability Verification
+  
+<img width="1090" height="610" alt="image" src="https://github.com/user-attachments/assets/9f5c0188-0772-4f94-8eec-327540892a85" />
 
 ### Payload
 `<script>alert(1)</script>`
 
-  ## Verification
+## Verification
   - Inserted the XSS payload into the search input field
   - Submitted the request via the search function
   - Result: The application executed unsanitized user input in the HTML context, confirming the presence of a reflected Cross-Site Scripting (XSS) vulnerability.
     
-Fig 2. JavaScript Pop-up Box (`alert(1)`) Confirming XSS Vulnerability Exploitation
+**Fig 2:** JavaScript Pop-up Box (`alert(1)`) Confirming XSS Vulnerability Exploitation
+
 <img width="658" height="372" alt="WhatsApp Image 2026-05-07 at 11 28 07" src="https://github.com/user-attachments/assets/28c5dafa-bd0a-4205-ae4e-38b535eb7622" />
 
-Fig 3. Solved State Notification for "Reflected XSS into HTML context with nothing encoded" Lab 
+---
+
+**Fig 3:** Solved State Notification for "Reflected XSS into HTML context with nothing encoded" Lab 
+
 <img width="941" height="393" alt="image" src="https://github.com/user-attachments/assets/95db3796-f199-402f-910f-988fe0e5b7da" />
 
 
-   ## Business Impact
+## Business Impact
 - **Account compromise** - Successful exploitation of this XSS vulnerability could allow attackers to execute malicious JavaScript in victims' browsers. This may lead to session hijacking, credential theft, unauthorized account access, phishing attacks, website defacement, and theft of sensitive information. The vulnerability may also result in reputational damage, financial loss, and regulatory compliance violations.
 - **Data Theft** - sensitive information may be exposed reveling personal user data, payment information and internal business data. This can lead to privacy violations, regulatory penalties and loss of customer trust
 - **Reputation Damage** - If users discover that a website is unsafe customer may stop using the platform, negative publicity may spread online and brand reputation may decline for businesses, where trust is critical
@@ -48,10 +53,10 @@ Fig 3. Solved State Notification for "Reflected XSS into HTML context with nothi
 - **Defacement of Web Applications** - Attackers can modify webpage content to display fake messages, spread propaganda, damage company image. This is especially damaging for public-facing websites.
 - **Compliance and Legal Issues** - Organizations handling sensitive data may violate regulations such as PCI DSS, GDPR & HIPAA. This can result in fines, audits & legal investigations.
 
-   ## Remediation
+## Remediation
 To mitigate Cross-Site Scripting (XSS) vulnerabilities, the application should implement proper input validation and output encoding mechanisms.
 
-Recommended remediation measures include:
+**Recommended remediation measures include:**
 
 - Validate and sanitize all user-supplied input before processing or storing it.
 - Apply context-aware output encoding for HTML, JavaScript, URLs, and attributes.
